@@ -1,0 +1,41 @@
+version: 2
+
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+      - build:
+         context: my-context
+      
+jobs:
+  build:
+   docker:
+     - image: circleci/node:4.8.2
+   #resource_class: 2xlarge+ 
+   steps:
+     - checkout
+     - run: |
+         echo "hello"
+         free -g
+         env
+         echo $DOCKER_USER
+         
+     
+  ram_disk:
+    docker:
+      - image: cimg/go:1.13
+      #- image: alpine
+     #- image: cimg/base:2020.01
+
+    working_directory: /dev/shm
+
+    steps:
+      - run: |
+          whoami
+          df -hP
+          pwd
+          ls -ld /dev/shm
+          echo '#!/bin/sh' > run.sh
+          echo 'echo Hello world!' >> run.sh
+          chmod +x run.sh
+      - run: bash ./run.sh 

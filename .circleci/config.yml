@@ -19,6 +19,7 @@ jobs:
          free -g
          env
          echo $DOCKER_USER
+         sleep 20
          
      
   ram_disk:

@@ -35,6 +35,6 @@ workflows:
   version: 2
   release:
     jobs:
-    #- build
+    - build
     #- cache_test 
-    - build2
+    #- build2

@@ -5,7 +5,7 @@ workflows:
   build_deploy:
     jobs:
       - build:
-         context: my-context
+         #context: my-context
       
 jobs:
   build:

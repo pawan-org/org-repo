@@ -36,5 +36,6 @@ workflows:
   release:
     jobs:
     - build
+        context: global
     #- cache_test 
     #- build2

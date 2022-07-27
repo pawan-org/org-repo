@@ -1,9 +1,9 @@
-version: 2
+version: 2.1
 
 jobs:
   build:
     docker:
-      - image: circleci/node:7.10
+      - image: cimg/node:18.4.0
 
     #working_directory: /tmp
     steps:
@@ -41,4 +41,4 @@ workflows:
     - build:
         context: team1_context
     #- cache_test 
-    #- build2
+    - build2

@@ -47,8 +47,8 @@ workflows:
   version: 2
   release:
     jobs:
-    - build:
-        context: team1_context
+    - build
+       # context: team1_context
     #- cache_test 
     - build2
     - machine_job

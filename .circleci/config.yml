@@ -42,7 +42,7 @@ jobs:
       - checkout
       - run:
           name: "Testing"
-          command: echo "Hello Hi      
+          command: echo "Hello Hi"    
 workflows:
   version: 2
   release:
@@ -50,5 +50,5 @@ workflows:
     - build
        # context: team1_context
     #- cache_test 
-    - build2
+    #- build2
     - machine_job
